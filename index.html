@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Rust Product Page</title>
-    <!-- FontAwesome للايقونات -->
+    <title>Ultimate Roblox Product Page</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- RESET & BASIC STYLES --- */
+    
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: #0b0b0d;
+            background-color: #240b01;
             color: #e1e1e1;
             display: flex;
             justify-content: center;
@@ -26,7 +26,7 @@
             padding: 20px;
         }
 
-        /* --- BREADCRUMB --- */
+       
         .breadcrumb {
             color: #666;
             font-size: 14px;
@@ -42,7 +42,7 @@
             color: #fff;
         }
 
-        /* --- CONTAINER --- */
+        
         .container {
             width: 100%;
             max-width: 1050px;
@@ -51,14 +51,14 @@
         .product-card {
             display: flex;
             gap: 25px;
-            background: #111114;
-            border: 1px solid #1f1f24;
+            background: #411301;
+            border: 1px solid #c74c05;
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(114, 2, 2, 0.5);
         }
 
-        /* --- LEFT SIDE: MEDIA --- */
+        
         .product-media {
             flex: 1.2;
             display: flex;
@@ -72,7 +72,7 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #282830;
-            background: #000;
+            background: #920303;
         }
 
         .main-image-container img {
@@ -102,7 +102,7 @@
             border-color: #e63946;
         }
 
-        /* --- RIGHT SIDE: DETAILS --- */
+        
         .product-details {
             flex: 1;
             display: flex;
@@ -406,7 +406,7 @@
     <div class="container">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
-            Store &gt; Rust &gt; <span>Ultimate Rust Cheat</span>
+            Store &gt; Roblox &gt; <span>Ultimate Roblox</span>
         </div>
 
         <!-- Main Product Card -->
@@ -415,30 +415,31 @@
             <!-- Left Side: Image Gallery -->
             <div class="product-media">
                 <div class="main-image-container">
-                    <img id="mainImg" src="https://via.placeholder.com/600x350/111114/ff334b?text=Rust+Cheat+Preview+1" alt="Product Preview">
+                    <img id="mainImg" src="Screenshot 2026-07-21 210202.png" alt="Product Preview">
                 </div>
                 <div class="thumbnails-container">
-                    <img class="thumb active" src="https://via.placeholder.com/100x60/111114/ff334b?text=1" onclick="changeImage(this, 'https://via.placeholder.com/600x350/111114/ff334b?text=Rust+Cheat+Preview+1')">
-                    <img class="thumb" src="https://via.placeholder.com/100x60/111114/00aaff?text=2" onclick="changeImage(this, 'https://via.placeholder.com/600x350/111114/00aaff?text=Rust+Cheat+Preview+2')">
-                    <img class="thumb" src="https://via.placeholder.com/100x60/111114/00ff88?text=3" onclick="changeImage(this, 'https://via.placeholder.com/600x350/111114/00ff88?text=Rust+Cheat+Preview+3')">
+                    <img class="thumb active" src="image.png" onclick="changeImage(this, 'image.png')">
+                    <img class="thumb" src="ze.png" onclick="changeImage(this, 'ze.png')">
+                    <img class="thumb" src="zero.png" onclick="changeImage(this, 'zero.png')">
                 </div>
             </div>
 
             <!-- Right Side: Product Options & Purchase -->
             <div class="product-details">
                 <div class="title-header">
-                    <h1 class="product-title">Ultimate Rust Cheat</h1>
-                    <span class="badge-risk">Use at own risk</span>
+                    <h1 class="product-title">Ultimate Roblox</h1>
+                    <span class="badge-risk">made by zero</span>
+                    
                 </div>
 
                 <p class="product-description">
-                    <strong>Ultimate Rust</strong> is a very capable all around external cheat.
+                    <strong>Ultimate Roblox</strong> is a very capable all around external cheat.
                 </p>
 
                 <ul class="feature-list">
                     <li>From known and experienced developers</li>
                     <li>Windows 10 & 11</li>
-                    <li>HWID spoofer is <strong>not included</strong> <a href="#">Bundle Spoofer</a></li>
+                    
                 </ul>
 
                 <div class="section-label">Select duration</div>
@@ -460,7 +461,7 @@
                     </label>
                 </div>
 
-                <div class="stock-info">1 keys available</div>
+                <div class="stock-info">1000 keys available</div>
 
                 <div class="price-container">
                     <span class="price-label">Total</span>
@@ -468,7 +469,7 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn-cart">Add to cart</button>
+                    
                     <button class="btn-buy" onclick="openPaymentModal()">Buy now</button>
                 </div>
 
@@ -479,7 +480,7 @@
         </div>
     </div>
 
-    <!-- Modal طرق الدفع الانبثاقية -->
+
     <div class="modal-overlay" id="paymentModal">
         <div class="modal">
             <div class="modal-header">
