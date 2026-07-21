@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-    
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +25,6 @@
             padding: 20px;
         }
 
-       
         .breadcrumb {
             color: #666;
             font-size: 14px;
@@ -42,7 +40,6 @@
             color: #fff;
         }
 
-        
         .container {
             width: 100%;
             max-width: 1050px;
@@ -58,7 +55,6 @@
             box-shadow: 0 10px 30px rgba(114, 2, 2, 0.5);
         }
 
-        
         .product-media {
             flex: 1.2;
             display: flex;
@@ -72,7 +68,7 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #282830;
-            background: #920303;
+            background: #111;
         }
 
         .main-image-container img {
@@ -102,7 +98,6 @@
             border-color: #e63946;
         }
 
-        
         .product-details {
             flex: 1;
             display: flex;
@@ -177,7 +172,6 @@
             text-decoration: underline;
         }
 
-        /* --- DURATION SELECTOR --- */
         .section-label {
             font-size: 14px;
             color: #888;
@@ -221,7 +215,6 @@
             margin-bottom: 25px;
         }
 
-        /* --- PRICE & BUTTONS --- */
         .price-container {
             display: flex;
             justify-content: space-between;
@@ -246,22 +239,6 @@
             margin-bottom: 15px;
         }
 
-        .btn-cart {
-            flex: 1;
-            background: transparent;
-            border: 1px solid #33333e;
-            color: #ff334b;
-            padding: 14px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-cart:hover {
-            background: #1a1a22;
-        }
-
         .btn-buy {
             flex: 1;
             background: #e63946;
@@ -284,7 +261,6 @@
             text-align: center;
         }
 
-        /* --- PAYMENT MODAL --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -393,7 +369,6 @@
             background: #e62e43;
         }
 
-        /* Media Queries Responsive */
         @media (max-width: 800px) {
             .product-card {
                 flex-direction: column;
@@ -404,18 +379,16 @@
 <body>
 
     <div class="container">
-        <!-- Breadcrumb -->
         <div class="breadcrumb">
             Store &gt; Roblox &gt; <span>Ultimate Roblox</span>
         </div>
 
-        <!-- Main Product Card -->
         <div class="product-card">
             
-            <!-- Left Side: Image Gallery -->
             <div class="product-media">
                 <div class="main-image-container">
-                    <img id="mainImg" src="Screenshot 2026-07-21 210202.png" alt="Product Preview">
+                    <!-- تم تعديل الصورة الرئيسية هنا لتبدأ بـ image.png -->
+                    <img id="mainImg" src="image.png" alt="Product Preview">
                 </div>
                 <div class="thumbnails-container">
                     <img class="thumb active" src="image.png" onclick="changeImage(this, 'image.png')">
@@ -424,12 +397,10 @@
                 </div>
             </div>
 
-            <!-- Right Side: Product Options & Purchase -->
             <div class="product-details">
                 <div class="title-header">
                     <h1 class="product-title">Ultimate Roblox</h1>
                     <span class="badge-risk">made by zero</span>
-                    
                 </div>
 
                 <p class="product-description">
@@ -439,7 +410,6 @@
                 <ul class="feature-list">
                     <li>From known and experienced developers</li>
                     <li>Windows 10 & 11</li>
-                    
                 </ul>
 
                 <div class="section-label">Select duration</div>
@@ -469,7 +439,6 @@
                 </div>
 
                 <div class="action-buttons">
-                    
                     <button class="btn-buy" onclick="openPaymentModal()">Buy now</button>
                 </div>
 
@@ -480,7 +449,6 @@
         </div>
     </div>
 
-
     <div class="modal-overlay" id="paymentModal">
         <div class="modal">
             <div class="modal-header">
@@ -489,7 +457,6 @@
             </div>
 
             <div class="payment-methods">
-                <!-- Option 1: Credit Card -->
                 <div class="payment-option selected" onclick="selectPayment(this)">
                     <div class="payment-info">
                         <i class="fa-solid fa-credit-card payment-icon" style="color: #ff334b;"></i>
@@ -498,7 +465,6 @@
                     <input type="radio" name="payment" checked>
                 </div>
 
-                <!-- Option 2: PayPal -->
                 <div class="payment-option" onclick="selectPayment(this)">
                     <div class="payment-info">
                         <i class="fa-brands fa-paypal payment-icon" style="color: #0079C1;"></i>
@@ -507,7 +473,6 @@
                     <input type="radio" name="payment">
                 </div>
 
-                <!-- Option 3: Crypto -->
                 <div class="payment-option" onclick="selectPayment(this)">
                     <div class="payment-info">
                         <i class="fa-brands fa-bitcoin payment-icon" style="color: #f7931a;"></i>
@@ -516,7 +481,6 @@
                     <input type="radio" name="payment">
                 </div>
 
-                <!-- Option 4: Vodafone Cash / Local Wallet -->
                 <div class="payment-option" onclick="selectPayment(this)">
                     <div class="payment-info">
                         <i class="fa-solid fa-wallet payment-icon" style="color: #e60000;"></i>
@@ -530,42 +494,33 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT CODE -->
     <script>
-        // تغيير سعر المنتج حسب المدة المختارة
         function selectDuration(element, price) {
-            // إزالة التحديد السابق
             document.querySelectorAll('.duration-btn').forEach(btn => {
                 btn.classList.remove('active');
                 btn.querySelector('input').checked = false;
             });
 
-            // إضافة التحديد للعنصر المختار
             element.classList.add('active');
             element.querySelector('input').checked = true;
 
-            // تحديث السعر
             document.getElementById('totalPrice').innerText = '$' + price.toFixed(2);
         }
 
-        // تغيير الصورة الرئيسية عند الضغط على الصور المصغرة
         function changeImage(element, src) {
             document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
             element.classList.add('active');
             document.getElementById('mainImg').src = src;
         }
 
-        // فتح نافذة طرق الدفع
         function openPaymentModal() {
             document.getElementById('paymentModal').classList.add('active');
         }
 
-        // إغلاق نافذة طرق الدفع
         function closePaymentModal() {
             document.getElementById('paymentModal').classList.remove('active');
         }
 
-        // اختيار طريقة الدفع داخل النافذة
         function selectPayment(element) {
             document.querySelectorAll('.payment-option').forEach(opt => {
                 opt.classList.remove('selected');
@@ -576,7 +531,6 @@
             element.querySelector('input').checked = true;
         }
 
-        // زر التأكيد وإكمال الشراء
         function processPayment() {
             const price = document.getElementById('totalPrice').innerText;
             alert(`Redirecting to gateway for ${price}...`);
